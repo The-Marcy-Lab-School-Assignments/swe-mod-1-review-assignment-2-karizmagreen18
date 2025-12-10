@@ -11,5 +11,14 @@ const bookInventory = {
 // "Beloved: 5 copies available"
 // etc...
 
+let keys = Object.keys(bookInventory);
+for(let i = 0; i < keys.length; i++) {
+let key = keys[i];
+console.log(`${keys[i]}: ${bookInventory[keys[i]]} copies available`);
+}
+
+
+
 // Part B: Calculate and log the total number of books across all titles (should be 15)
 // Hint: You'll need a variable to keep track of the running total as you loop through the keys
+
