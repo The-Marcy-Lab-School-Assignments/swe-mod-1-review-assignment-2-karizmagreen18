@@ -1,17 +1,17 @@
 const team1 = {
   name: "Warriors",
   wins: 45,
-  losses: 20
+  losses: 20,
 };
 
-const team2 = {...team1};
+const team2 = { ...team1 };
 team2.wins = 50;
 team2.losses = 15;
- 
-console.log(team1.wins)
-console.log(team1.losses)
-console.log(team2.wins)
-console.log(team2.losses)
+
+console.log(team1.wins);
+console.log(team1.losses);
+console.log(team2.wins);
+console.log(team2.losses);
 /* 
 Part A: What will team1.wins and team1.losses be after this code runs? Write your prediction as a comment below:
 
