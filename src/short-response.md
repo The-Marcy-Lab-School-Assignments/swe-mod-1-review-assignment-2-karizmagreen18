@@ -28,7 +28,9 @@ Part B: How would you modify the code so that reassigning `playlist2.songCount` 
 
 ### Response 1
 
-I would use rest parameters for playlist1 where playlist2 is being assigned to be equal to playlist 1
+PART A - 15 will appear in the console. This happens because playlist2 is assigned to playlist1. Since objects are reference types, both variables point to the same location in memory. As a result, when playlist2.songCount is changed to 15, the songCount property on playlist1 also reflects that change.
+
+PART B - To prevent this, playlist2 should be created as a copy of playlist1 rather than referencing the original object. This ensures that changes to playlist2 do not affect playlist1.
 
 **Corrected Code:**
 
@@ -87,7 +89,7 @@ console.log(upperCaseLetters);
 
 // used chatGPT to grammar correct and it changed some of my answer
 
-Because the capitalize() function is called without any argument, it cannot reference the values in the letters array. To fix this, you need to use the correct syntax for the .map() method by passing the function reference instead of calling the function directly. To avoid this error in the future, make sure to use the proper .map() syntax and pass function references when appropriate.
+he error happens because capitalize() is being run immediately instead of being passed into map as a callback. When capitalize() runs with no arguments, it returns undefined, and then map tries to use that undefined like it’s a function. The fix is just to remove the parentheses and pass the function reference instead: letters.map(capitalize). 
 
 ## Prompt 4
 
@@ -115,8 +117,5 @@ const grandTotal = orders.reduce((sum, order) => {
 ### Response 4
 
 A. 135
-B. a starting value for the reduce method
-C.
-- 0
-- 45
-- the total of all orders is summed together.
+B. The 0 at the end of reduce is the initialValue for sum, which acts as the accumulator. It sets the starting point for the total. This matters because it ensures every element in the array gets processed in the calculation. If the initialValue isn’t included, the accumulator will automatically start as the first element of the array instead.
+C. On the first pass of reduce, sum starts at 0 and order is 45. The function returns sum + order.total, which is 0 + 45. After that, sum becomes 45, and in the next iteration, it adds the total from the next order, continuing the accumulation.

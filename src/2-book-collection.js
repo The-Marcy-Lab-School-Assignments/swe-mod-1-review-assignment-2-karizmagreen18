@@ -1,7 +1,7 @@
 const bookInventory = {
   "The Bluest Eye": 3,
-  Beloved: 5,
-  Homegoing: 2,
+  "Beloved": 5,
+  "Homegoing": 2,
   "The Vanishing Half": 4,
   "Between the World and Me": 1,
 };
